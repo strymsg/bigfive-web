@@ -290,7 +290,8 @@ export default {
     }
   },
   env: {
-    API_URL: 'https://bigfive-test.com/api/' // TODO: Fix for dev environment
+    // API_URL: 'https://bigfive-test.com/api/' // TODO: Fix for dev environment
+    API_URL: 'http://localhost:4001/api/'
   },
   build: {
     extractCSS: true,

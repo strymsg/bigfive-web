@@ -1,0 +1,22 @@
+/**
+ * Express server to avoid using vercel cli and run this /api in our own servers.
+*/
+
+const express = require('express');
+const app = express();
+const port = 4001;
+
+const save = require('./save');
+const result = require('./result');
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.post('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
