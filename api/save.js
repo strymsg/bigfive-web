@@ -8,20 +8,20 @@ module.exports = async (req, res) => {
     return
   }
   const { body: payload } = req
-  // console.log(Object.keys(req));
-  // console.log(payload);
-  // if (!payload) {
-  //   res.status(400).json({ type: 'error', message: 'Not a valid payload' })
-  //   return
-  // }
+  console.log('--------------');
+  console.log(payload);
+  if (!payload) {
+    res.status(400).json({ type: 'error', message: 'Not a valid payload' })
+    return
+  }
 
-  // const { error } = validate(payload)
-  // const isValid = !error
+  const { error } = validate(payload)
+  const isValid = !error
 
-  // if (!isValid) {
-  //   res.status(400).json({ type: 'error', message: error })
-  //   return
-  // }
+  if (!isValid) {
+    res.status(400).json({ type: 'error', message: error })
+    return
+  }
 
   try {
     console.log('Connecting to mongo...');
