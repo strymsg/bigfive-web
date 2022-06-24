@@ -22,13 +22,15 @@ app.get('/', (req, res) => {
 })
 
 app.post('/save', (req, res) => {
-  console.log('POST to /api/save');
-  console.log('-----------------');
+  console.log(` -> ${req.method} to ${req.url}`);
   return save(req, res);
 })
 
-// app.listen(port, () => {
-//   console.log(`/api app listening on port ${port}`);
-// });
+app.get('/result/:id', (req, res) => {
+  console.log(` -> ${req.method} to ${req.url}`);
+  console.log(req.params)
+  return result(req, res);
+});
+
 
 module.exports = app;

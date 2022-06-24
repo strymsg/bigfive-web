@@ -8,8 +8,6 @@ module.exports = async (req, res) => {
     return
   }
   const { body: payload } = req
-  console.log('--------------');
-  console.log(payload);
   if (!payload) {
     res.status(400).json({ type: 'error', message: 'Not a valid payload' })
     return

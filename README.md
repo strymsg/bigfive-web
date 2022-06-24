@@ -1,3 +1,5 @@
+> This is a modified version of the original repo to make it easier to save the test results in a local database. see [local delploy](#Local-Deploy)
+
 # bigfive-web
 
 <img src="https://github.com/rubynor/bigfive-web/blob/master/static/icon.png?raw=true" width="160" height="160" alt="Bigfive logo" align="right">
@@ -56,6 +58,24 @@ yarn test
 ```
 yarn lint
 yarn lintfix
+```
+
+## Local Deploy
+
+### Running mongo
+
+Example of `.env` file.
+
+```
+MONGODB_URI=mongodb://mongo:mongo@localhost:27017
+MONGODB_COLLECTION=results
+BASE_URL=http://localhost:3001
+```
+
+Example for running docker on localhost
+
+```sh
+docker run --name mongodb -d -e MONGO_INITDB_ROOT_USERNAME=mongo -e MONGO_INITDB_ROOT_PASSWORD=mongo -p 27017:27017 mongo
 ```
 
 ## Deploy using [vercel-cli](https://vercel.com/download)
