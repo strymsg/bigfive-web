@@ -8,6 +8,7 @@ const cors = require('cors');
 const port = 4001;
 const save = require('./save');
 const result = require('./result');
+const compare = require('./compare');
 
 const app = express();
 app.use(express.json());
@@ -32,5 +33,10 @@ app.get('/result/:id', (req, res) => {
   return result(req, res);
 });
 
+app.get('/compare/:id', (req, res) => {
+  console.log(` -> ${req.method} to ${req.url}`);
+  console.log(req.params)
+  return compare(req, res);
+})
 
 module.exports = app;
