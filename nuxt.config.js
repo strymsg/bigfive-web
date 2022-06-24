@@ -291,34 +291,32 @@ export default {
   },
   serverMiddleware: [
     {
-      "path": "/api/result/:id/:lang",
-      "handler": "~/api/result.js"
+      "path": "/api/",
+      "handler": "~/api/server.js"
     },
-    {
-      "path": "/api/result/:id",
-      "handler": "~/api/result.js"
-    },
-    {
-      "path": "/api/compare/:id",
-      "handler": "~/api/compare.js"
-    },
-    {
-      "path": "/api/save",
-      "handler": "~/api/save.js"
-    }
     // {
-    //   "path": "/api/(.*)",
-    //   "handler": "~/api/$1.js"
+    //   "path": "/api/result/:id/:lang",
+    //   "handler": "~/api/result.js"
     // },
     // {
-    //   "path": "/service-worker.js",
-    //   "handler": "~/sw.js"
+    //   "path": "/api/result/:id",
+    //   "handler": "~/api/result.js"
+    // },
+    // {
+    //   "path": "/api/compare/:id",
+    //   "handler": "~/api/compare.js"
+    // },
+    // {
+    //   "path": "/api/save",
+    //   "handler": "~/api/save.js"
     // }
   ],
+  server: {
+    port: 3001,
+  },
   env: {
     // API_URL: 'https://bigfive-test.com/api/' // TODO: Fix for dev environment
-    // API_URL: 'http://localhost:4001/api/'
-    API_URL: 'http://localhost:3000/api/'
+    API_URL: 'http://localhost:3001/api/'
   },
   build: {
     extractCSS: true,
