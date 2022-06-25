@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "API for big five test",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "refresh": "rm -rf node_modules && rm package-lock.json && npm i"
   },
@@ -19,6 +20,8 @@
   "dependencies": {
     "@alheimsins/b5-result-text": "5.0.4",
     "@alheimsins/bigfive-calculate-score": "3.0.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
     "joi": "17.2.1",
     "mongodb": "3.6.1"
   }

@@ -1,15 +1,13 @@
 const connectToDb = require('./lib/connect-to-db')
 const validate = require('./lib/validate-test')
-const dbCollection = process.env.MONGODB_COLLECTION
+const dbCollection = process.env.MONGODB_COLLECTION || 'results';
 
 module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') {
     res.send('ok!')
     return
   }
-
   const { body: payload } = req
-
   if (!payload) {
     res.status(400).json({ type: 'error', message: 'Not a valid payload' })
     return
@@ -24,13 +22,15 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const db = await connectToDb()
-    const collection = db.collection(dbCollection)
-
-    const data = await collection.insertOne(payload)
+    console.log('Connecting to mongo...');
+    const db = await connectToDb();
+    const collection = db.collection(dbCollection);
+    const data = await collection.insertOne(payload);
     res.send({ id: data.insertedId })
     return
   } catch (error) {
-    res.status(500).json({ type: 'error', message: error.message })
+    console.log('ERROR connecting to mongo');
+    console.log(error);
+    res.status(500).json({ type: 'error', message: error.message });
   }
 }

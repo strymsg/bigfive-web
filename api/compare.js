@@ -6,8 +6,9 @@ const base64url = require('./lib/base64url')
 const dbCollection = process.env.MONGODB_COLLECTION
 
 module.exports = async (req, res) => {
-  const { query: { id } } = req
-
+  //const { query: { id } } = req
+  const { params: { id, lang } } = req
+  
   if (!id) {
     res.status(500).json({ type: 'error', message: 'Not a valid id' })
     return

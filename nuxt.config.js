@@ -289,8 +289,18 @@ export default {
       }
     }
   },
+  serverMiddleware: [
+    {
+      "path": "/api/",
+      "handler": "~/api/server.js"
+    },
+  ],
+  server: {
+    port: 3001,
+  },
   env: {
-    API_URL: 'https://bigfive-test.com/api/' // TODO: Fix for dev environment
+    // API_URL: 'https://bigfive-test.com/api/' // TODO: Fix for dev environment
+    API_URL: 'http://localhost:3001/api/'
   },
   build: {
     extractCSS: true,

@@ -10,8 +10,9 @@ const { languages: availableLanguages } = getInfo()
 const dbCollection = process.env.MONGODB_COLLECTION
 
 module.exports = async (req, res) => {
-  const { query: { id, lang } } = req
-
+  // const { query: { id, lang } } = req
+  const { params: { id, lang } } = req
+  console.log(id, lang);
   if (!id || !validMongoId(id)) {
     res.status(500).json({ type: 'error', message: 'Not a valid id' })
     return
