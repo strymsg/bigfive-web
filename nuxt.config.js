@@ -294,22 +294,6 @@ export default {
       "path": "/api/",
       "handler": "~/api/server.js"
     },
-    // {
-    //   "path": "/api/result/:id/:lang",
-    //   "handler": "~/api/result.js"
-    // },
-    // {
-    //   "path": "/api/result/:id",
-    //   "handler": "~/api/result.js"
-    // },
-    // {
-    //   "path": "/api/compare/:id",
-    //   "handler": "~/api/compare.js"
-    // },
-    // {
-    //   "path": "/api/save",
-    //   "handler": "~/api/save.js"
-    // }
   ],
   server: {
     port: 3001,
