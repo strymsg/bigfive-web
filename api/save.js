@@ -24,10 +24,8 @@ module.exports = async (req, res) => {
   try {
     console.log('Connecting to mongo...');
     const db = await connectToDb();
-    console.log(db);
     const collection = db.collection(dbCollection);
     const data = await collection.insertOne(payload);
-    console.log();
     res.send({ id: data.insertedId })
     return
   } catch (error) {
