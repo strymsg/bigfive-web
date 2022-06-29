@@ -64,18 +64,28 @@ yarn lintfix
 
 ### Running mongo
 
-Example of `.env` file.
+Firs install all dependencies with `yarn setup`, then create the `.env` file, this is an example:
 
 ```
 MONGODB_URI=mongodb://mongo:mongo@localhost:27017
 MONGODB_COLLECTION=results
-BASE_URL=http://localhost:3001
+NUXT_PORT=3001
+API_URL=http://localhost:3001/api/
 ```
 
-Example for running docker on localhost
+Example for running mongo with docker on localhost:
 
 ```sh
 docker run --name mongodb -d -e MONGO_INITDB_ROOT_USERNAME=mongo -e MONGO_INITDB_ROOT_PASSWORD=mongo -p 27017:27017 mongo
+```
+
+Build should be done every time you modify the `.env` file.
+
+```
+yarn build
+
+# Then start with
+yarn start
 ```
 
 ## Deploy using [vercel-cli](https://vercel.com/download)

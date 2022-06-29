@@ -296,11 +296,10 @@ export default {
     },
   ],
   server: {
-    port: 3001,
+    port: process.env.NUXT_PORT || 3001,
   },
   env: {
-    // API_URL: 'https://bigfive-test.com/api/' // TODO: Fix for dev environment
-    API_URL: 'http://localhost:3001/api/'
+    API_URL: process.env.API_URL || `http://localhost:${process.env.NUXT_PORT || 3001}/api/`
   },
   build: {
     extractCSS: true,
